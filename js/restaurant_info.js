@@ -92,7 +92,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 	name.innerHTML = restaurant.name;
 
 	const address = document.getElementById("restaurant-address");
-	address.innerHTML = restaurant.address;
+	address.innerHTML = restaurant.address.replace(", ", ",<br/>");
 
 	const image = document.getElementById("restaurant-img");
 	image.className = "restaurant-img";
@@ -124,7 +124,7 @@ fillRestaurantHoursHTML = (
 		row.appendChild(day);
 
 		const time = document.createElement("td");
-		time.innerHTML = operatingHours[key];
+		time.innerHTML = operatingHours[key].replace(/, */g, ",<br/>");
 		row.appendChild(time);
 
 		hours.appendChild(row);
@@ -158,19 +158,26 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = review => {
 	const li = document.createElement("li");
+	const div = document.createElement("div");
 	const name = document.createElement("p");
 	name.innerHTML = review.name;
-	li.appendChild(name);
+	div.appendChild(name);
 
 	const date = document.createElement("p");
 	date.innerHTML = review.date;
-	li.appendChild(date);
+	div.appendChild(date);
+	div.id = "review-name";
+	li.append(div);
 
+	const ratingDiv = document.createElement("div");
 	const rating = document.createElement("p");
+	ratingDiv.id = "rating";
 	rating.innerHTML = `Rating: ${review.rating}`;
-	li.appendChild(rating);
+	ratingDiv.appendChild(rating);
+	li.appendChild(ratingDiv);
 
 	const comments = document.createElement("p");
+	comments.id = "comments";
 	comments.innerHTML = review.comments;
 	li.appendChild(comments);
 
