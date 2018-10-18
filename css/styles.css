@@ -69,6 +69,21 @@ section {
 	text-align: center;
 	text-transform: uppercase;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	#footer {
+		font-size: 0.85rem;
+		padding-top: 1.25rem;
+	}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	#footer {
+		font-size: 1rem;
+		padding-top: 1.25rem;
+	}
+}
+
 /* ====================== Navigation ====================== */
 nav {
 	width: 100%;
@@ -86,6 +101,27 @@ nav h1 a {
 	letter-spacing: 10px;
 	text-transform: uppercase;
 }
+
+/* Media Queries for Phones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+	nav h1 {
+		padding-top: 0.5rem;
+	}
+}
+
+@media only screen and (min-device-width: 401px) and (max-device-width: 480px) {
+	nav h1 {
+		padding-top: 1.25rem;
+	}
+}
+
+/* Media Queries for Tablets */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	header nav h1 {
+		padding: 1.5rem;
+	}
+}
+
 #breadcrumb {
 	padding: 10px 40px 16px;
 	list-style: none;
@@ -117,20 +153,6 @@ nav h1 a {
 #breadcrumb li a {
 	color: #0275d8;
 	text-decoration: none;
-}
-
-/* Media Queries for Phones */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	nav h1 {
-		padding-top: 0.5rem;
-	}
-}
-
-/* Media Queries for Tablets */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	header nav h1 {
-		padding: 1.5rem;
-	}
 }
 
 /* Add a color on mouse-over */
