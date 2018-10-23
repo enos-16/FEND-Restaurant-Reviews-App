@@ -63,7 +63,7 @@ section {
 #footer {
 	background-color: #444;
 	color: #aaa;
-	font-size: 8pt;
+	font-size: 1rem;
 	letter-spacing: 1px;
 	padding: 25px;
 	text-align: center;
@@ -93,6 +93,7 @@ nav {
 }
 nav h1 {
 	margin: auto;
+	padding-top: 1.5rem;
 }
 nav h1 a {
 	color: #fff;
@@ -140,6 +141,7 @@ nav h1 a {
 /* Display list items side by side */
 #breadcrumb li {
 	display: inline;
+	font-size: 1rem;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -352,10 +354,10 @@ nav h1 a {
 
 .inside #map-container {
 	background: blue none repeat scroll 0 0;
-	height: 87%;
+	height: calc(100vh - 132px);
 	position: fixed;
 	right: 0;
-	top: 80px;
+	top: 132px;
 	width: 50%;
 }
 
@@ -377,7 +379,7 @@ nav h1 a {
 .inside #footer {
 	bottom: 0;
 	position: absolute;
-	width: 50%;
+	width: 46.5%;
 }
 #restaurant-name {
 	color: mediumseagreen;
@@ -390,11 +392,12 @@ nav h1 a {
 	line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 80%;
 }
 #restaurant-address {
 	font-size: 12pt;
 	margin: 10px 0px;
+	text-align: center;
 }
 #restaurant-cuisine {
 	background-color: #333;
@@ -406,17 +409,24 @@ nav h1 a {
 	padding: 2px 0;
 	text-align: center;
 	text-transform: uppercase;
-	width: 90%;
+	width: 80%;
+}
+#restaurant-hours td {
+	color: #666;
 }
 #restaurant-container,
 #reviews-container {
 	border-bottom: 1px solid #d9d9d9;
 	border-top: 1px solid #fff;
-	padding: 140px 40px 30px;
+	padding: 140px 0px 30px;
 	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #reviews-container {
 	padding: 30px 40px 80px;
+	align-items: flex-start;
 }
 #reviews-container h2 {
 	color: mediumseagreen;
@@ -438,16 +448,36 @@ nav h1 a {
 	overflow: hidden;
 	position: relative;
 	width: 85%;
+	border-radius: 10px;
 }
-#reviews-list li p {
-	margin: 0 0 10px;
+
+#review-name {
+	display: flex;
+	justify-content: space-between;
+	background-color: black;
 }
-#restaurant-hours td {
-	color: #666;
+
+#review-name p {
+	color: mediumseagreen;
+	font-size: 1.125rem;
+	padding: 0.5rem;
+	margin: 0;
+}
+
+#comments {
+	font-size: 1rem;
+	padding: 0.5rem;
 }
 
 #rating p {
-	/* width: 30% !important; */
+	background-color: mediumseagreen;
+	font-size: 1.125rem;
+	color: white;
+	margin: 0.75rem 0 0 1rem;
+	padding: 0.35rem;
+	width: fit-content;
+	text-transform: uppercase;
+	border-radius: 5px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -550,7 +580,7 @@ nav h1 a {
 
 	.inside #map-container {
 		top: 144px;
-		height: 100%;
+		height: calc(100vh - 144px);
 	}
 
 	#restaurant-container {
