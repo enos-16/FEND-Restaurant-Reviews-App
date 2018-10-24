@@ -70,14 +70,14 @@ section {
 	text-transform: uppercase;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	#footer {
 		font-size: 0.85rem;
 		padding-top: 1.25rem;
 	}
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 	#footer {
 		font-size: 1rem;
 		padding-top: 1.25rem;
@@ -104,21 +104,21 @@ nav h1 a {
 }
 
 /* Media Queries for Phones */
-@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+@media only screen and (min-width: 320px) and (max-width: 396px) {
 	nav h1 {
 		padding-top: 0.5rem;
 	}
 }
 
-@media only screen and (min-device-width: 401px) and (max-device-width: 480px) {
+@media only screen and (min-width: 397px) and (max-width: 480px) {
 	nav h1 {
 		padding-top: 1.25rem;
 	}
 }
 
 /* Media Queries for Tablets */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	header nav h1 {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	nav h1 {
 		padding: 1.5rem;
 	}
 }
@@ -132,7 +132,7 @@ nav h1 a {
 	width: auto;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	#breadcrumb li {
 		font-size: 2rem;
 	}
@@ -170,7 +170,7 @@ nav h1 a {
 }
 
 /* Media Queries for Phones */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	#map {
 		height: 20rem;
 	}
@@ -206,7 +206,7 @@ nav h1 a {
 }
 
 /* Media Queries for Phones */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	.filter-options {
 		flex-flow: column;
 	}
@@ -276,7 +276,7 @@ nav h1 a {
 }
 
 /* Media Queries for Phones */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
 	#restaurants-list {
 		padding: 0.75rem 0.5rem;
 	}
@@ -308,7 +308,7 @@ nav h1 a {
 }
 
 /* Media Queries for Tablets and larger */
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 481px) {
 	#restaurants-list li {
 		display: inline-flex;
 		flex-wrap: wrap;
@@ -342,16 +342,6 @@ nav h1 a {
 	z-index: 1001;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	.inside header nav h1 {
-		padding-top: 1.5rem;
-	}
-
-	.inside header nav h1 a {
-		font-size: 1.25em;
-	}
-}
-
 .inside #map-container {
 	background: blue none repeat scroll 0 0;
 	height: calc(100vh - 132px);
@@ -361,51 +351,39 @@ nav h1 a {
 	width: 50%;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-	.inside #map-container {
-		width: calc(100vw);
-		height: calc(25vh);
-		position: absolute;
-		right: 0;
-		top: 155px;
-	}
-}
-
 .inside #map {
 	background-color: #ccc;
 	height: 100%;
 	width: 100%;
 }
-.inside #footer {
-	bottom: 0;
-	position: absolute;
-	width: 46.5%;
-}
+
 #restaurant-name {
 	color: mediumseagreen;
 	font-family: Arial, sans-serif;
 	font-size: 20pt;
 	font-weight: 200;
 	letter-spacing: 0;
-	margin: 15px 0 30px;
+	margin: 1rem 0;
 	text-transform: uppercase;
 	line-height: 1.1;
 }
 #restaurant-img {
 	width: 80%;
+	border-radius: 10px 10px 0 0;
 }
 #restaurant-address {
-	font-size: 12pt;
+	font-size: 14pt;
 	margin: 10px 0px;
 	text-align: center;
 }
 #restaurant-cuisine {
 	background-color: #333;
 	color: #ddd;
-	font-size: 12pt;
+	border-radius: 0 0 10px 10px;
+	font-size: 14pt;
 	font-weight: 300;
 	letter-spacing: 10px;
-	margin: 0 0 20px;
+	margin: 0 0 10px;
 	padding: 2px 0;
 	text-align: center;
 	text-transform: uppercase;
@@ -413,19 +391,20 @@ nav h1 a {
 }
 #restaurant-hours td {
 	color: #666;
+	font-size: 1.125rem;
 }
 #restaurant-container,
 #reviews-container {
 	border-bottom: 1px solid #d9d9d9;
 	border-top: 1px solid #fff;
-	padding: 140px 0px 30px;
+	padding: 131px 0px 30px;
 	width: 50%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 #reviews-container {
-	padding: 30px 40px 80px;
+	padding: 30px 40px;
 	align-items: flex-start;
 }
 #reviews-container h2 {
@@ -480,23 +459,53 @@ nav h1 a {
 	border-radius: 5px;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+.inside #footer {
+	bottom: 0;
+	position: absolute;
+	width: 46.75%;
+	padding: 0.5rem 1.5rem;
+	font-size: 0.85rem;
+}
+
+/* Media Queries for Phones - Restaurant Detail */
+@media only screen and (min-width: 320px) and (max-width: 395px) {
+	.inside header nav h1 {
+		padding-top: 0.7rem;
+		font-size: 1rem;
+	}
+}
+@media only screen and (min-width: 396px) and (max-width: 480px) {
+	.inside header nav h1 {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 492px) {
+	.inside #map-container {
+		width: calc(100vw);
+		height: calc(44vh - 131px);
+		position: absolute;
+		right: 0;
+		top: 131px;
+	}
+
 	#restaurant-container {
 		width: auto;
-		padding-top: calc(34vh);
+		padding-top: calc(43.5vh);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
 	#restaurant-container h1 {
-		font-size: 3rem;
-		color: mediumseagreen;
+		font-size: 1.75rem;
+		margin: 0.75rem;
 	}
 
 	#restaurant-container p {
-		font-size: 2.5rem;
+		font-size: 1.25rem;
 		text-align: center;
+		margin: 0 0 0.75rem;
 	}
 
 	#restaurant-img {
@@ -510,16 +519,17 @@ nav h1 a {
 	}
 
 	#restaurant-hours td {
-		font-size: 2.5rem;
+		font-size: 1.125rem;
 	}
 
 	#reviews-container {
 		width: auto;
+		padding: 0.5rem;
+		align-items: center;
 	}
 
 	#reviews-container h2 {
-		font-size: 3rem;
-		color: mediumseagreen;
+		font-size: 1.75rem;
 	}
 
 	#reviews-list {
@@ -529,24 +539,24 @@ nav h1 a {
 	}
 
 	#reviews-list li {
-		border-radius: 40px;
-		box-shadow: 10px 10px lightgray;
+		border-radius: 30px;
+		box-shadow: 5px 5px lightgray;
+		width: 95%;
 	}
 
 	#reviews-list li p {
-		padding: 1.5rem;
+		padding: 1rem;
 		margin: 0;
 	}
 
-	#reviews-list li #review-name {
+	#review-name {
 		justify-content: space-between;
 		background-color: black;
 		display: flex;
 	}
 
 	#review-name p {
-		font-size: 3rem;
-		color: mediumseagreen;
+		font-size: 1rem;
 	}
 
 	#rating {
@@ -554,33 +564,133 @@ nav h1 a {
 	}
 
 	#rating p {
-		background-color: mediumseagreen;
-		font-size: 2.5rem;
+		font-size: 1rem;
 		color: white;
 		margin: 1rem 2rem 0 !important;
 		padding: 0.5rem 1rem !important;
-		width: 26%;
 		text-transform: uppercase;
 	}
 
 	#comments {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
 	}
 
 	.inside #footer {
-		width: -webkit-fill-available;
-		font-size: 1.75em;
+		width: auto;
+		font-size: 0.75rem;
+		padding: 0.75rem;
+		bottom: -50px;
 	}
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-	#breadcrumb li {
-		font-size: 1.5rem;
+/* Media Queries for sizes between Phones and Tablets  - Restaurant Detail */
+@media only screen and (min-width: 493px) and (max-width: 767px) {
+	.inside header nav {
+		height: 70px;
+	}
+
+	.inside header nav h1 {
+		padding-top: 1rem;
+	}
+
+	#breadcrumb {
+		padding: 0.5rem 2rem;
 	}
 
 	.inside #map-container {
-		top: 144px;
-		height: calc(100vh - 144px);
+		height: calc(100vh - 111px);
+		top: 111px;
+		width: calc(50vw);
+	}
+
+	#restaurant-container {
+		padding-top: 7rem;
+	}
+
+	#restaurant-container h1 {
+		margin: 0.5rem 0 0.75rem;
+	}
+
+	#restaurant-img {
+		border-radius: 10px 10px 0 0;
+	}
+
+	#restaurant-cuisine {
+		border-radius: 0 0 10px 10px;
+	}
+
+	#reviews-container {
+		padding: 0.5rem;
+		align-items: center;
+		width: 48%;
+	}
+
+	#reviews-container h2 {
+		font-size: 1.5rem;
+		margin-bottom: 10px;
+	}
+
+	#reviews-list li {
+		width: auto;
+	}
+
+	#review-name p {
+		font-size: 1rem;
+	}
+
+	#rating p {
+		margin: 0.5rem 0 0 0.5rem;
+	}
+
+	#comments {
+		margin: 0;
+	}
+
+	.inside #footer {
+		width: calc(45.5vw);
+		font-size: 0.65rem;
+		padding: 0.75rem;
+		bottom: -30px;
+	}
+}
+
+@media only screen and (min-width: 493px) and (max-width: 560px) {
+	.inside #footer {
+		width: calc(45.5vw);
+		font-size: 0.65rem;
+		padding: 0.75rem;
+		bottom: -30px;
+	}
+}
+
+@media only screen and (min-width: 561px) and (max-width: 767px) {
+	.inside #footer {
+		width: calc(47vw);
+	}
+}
+
+/* Media Queries for Tablets and larger  - Restaurant Detail */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	.inside header nav {
+		height: 70px;
+	}
+
+	.inside header nav h1 {
+		padding-top: 1.25rem;
+	}
+
+	#breadcrumb {
+		padding: 0.75rem 0 0.75rem 1.75rem;
+	}
+
+	#breadcrumb li {
+		font-size: 1.125rem;
+	}
+
+	.inside #map-container {
+		top: 121px;
+		height: calc(100vh - 121px);
+		width: 47%;
 	}
 
 	#restaurant-container {
@@ -588,10 +698,12 @@ nav h1 a {
 		flex-direction: column;
 		align-items: center;
 		padding-left: 0;
+		padding-top: 121px;
 	}
 
 	#restaurant-name {
-		font-size: 2rem;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
 	}
 
 	#restaurant-img {
@@ -605,12 +717,22 @@ nav h1 a {
 	}
 
 	#restaurant-container p {
-		font-size: 1.75rem;
+		font-size: 1.25rem;
 		text-align: center;
 	}
 
 	#restaurant-container td {
-		font-size: 1.25rem;
+		font-size: 1.125rem;
+	}
+
+	#reviews-container {
+		padding: 0.5rem;
+		align-items: center;
+	}
+
+	#reviews-container h2 {
+		margin: 0 0 0.5rem;
+		font-size: 1.75rem;
 	}
 
 	#reviews-list {
@@ -619,8 +741,9 @@ nav h1 a {
 	}
 
 	#reviews-list li {
-		border-radius: 40px;
-		box-shadow: 10px 10px lightgray;
+		border-radius: 25px;
+		box-shadow: 5px 5px lightgrey;
+		width: 100%;
 	}
 
 	#rating {
@@ -628,17 +751,14 @@ nav h1 a {
 	}
 
 	#rating p {
-		background-color: mediumseagreen;
-		font-size: 1.25rem;
-		color: white;
-		margin: 1rem 2rem 0 !important;
-		padding: 0.5rem 1rem !important;
-		width: 24%;
+		font-size: 1.125rem;
+		margin: 0.75rem 1rem 0 !important;
+		padding: 0.25rem 0.75rem !important;
 		text-transform: uppercase;
 	}
 
 	#reviews-list li p {
-		padding: 1.5rem;
+		padding: 0.75rem;
 		margin: 0;
 	}
 
@@ -649,16 +769,28 @@ nav h1 a {
 	}
 
 	#review-name p {
-		color: mediumseagreen;
-		font-size: 1.5rem;
+		font-size: 1.125rem;
 	}
 
 	#comments {
-		font-size: 1.4rem;
+		font-size: 1.125rem;
 	}
 
 	.inside #footer {
-		width: 45%;
-		font-size: 1.125rem;
+		width: 51.125%;
+		font-size: 0.75rem;
+		padding: 0.5rem;
+	}
+}
+/* Desktops and larger */
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+	.inside #footer {
+		width: 45.75%;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) {
+	.inside #footer {
+		width: 46%;
 	}
 }

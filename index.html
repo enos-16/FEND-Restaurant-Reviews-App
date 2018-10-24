@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF:-8">
@@ -20,10 +20,10 @@
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" role="application" aria-label="Map of locations">
       <div id="map"></div>
     </section>
-    <section>
+    <section role="contentinfo" aria-label="filter-options">
       <div class="filter-options">
         <h2>Filter Results</h2>
         <select tabindex="2" role="tablist" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -33,6 +33,8 @@
           <option value="all">All Cuisines</option>
         </select>
       </div>
+    </section>
+    <section role="contentinfo" aria-label="restaurants-list">
       <ul id="restaurants-list"></ul>
     </section>
   </main>
