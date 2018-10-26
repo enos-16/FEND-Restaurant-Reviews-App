@@ -72,24 +72,30 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize leaflet map, called from HTML.
  */
 initMap = () => {
-	self.newMap = L.map("map", {
-		center: [40.722216, -73.987501],
-		zoom: 12,
-		scrollWheelZoom: false
-	});
-	L.tileLayer(
-		"https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}",
-		{
-			mapboxToken:
-				"pk.eyJ1IjoiaGFycnlsb3AiLCJhIjoiY2pteG95ZjhvMGR3dTNybGx1MnJpZWR5NSJ9.SuFSZdMKkLzWsgAxRlMw1A",
-			maxZoom: 18,
-			attribution:
-				'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			id: "mapbox.streets"
+	if (navigator.onLine) {
+		try {
+			self.newMap = L.map("map", {
+				center: [40.722216, -73.987501],
+				zoom: 12,
+				scrollWheelZoom: false
+			});
+			L.tileLayer(
+				"https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}",
+				{
+					mapboxToken:
+						"pk.eyJ1IjoiaGFycnlsb3AiLCJhIjoiY2pteG95ZjhvMGR3dTNybGx1MnJpZWR5NSJ9.SuFSZdMKkLzWsgAxRlMw1A",
+					maxZoom: 18,
+					attribution:
+						'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+						'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+						'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+					id: "mapbox.streets"
+				}
+			).addTo(newMap);
+		} catch (error) {
+			console.log("Map couldn't be initialized", error);
 		}
-	).addTo(newMap);
+	}
 
 	updateRestaurants();
 };
@@ -188,6 +194,8 @@ createRestaurantHTML = restaurant => {
  * Add markers for current restaurants to the map.
  */
 addMarkersToMap = (restaurants = self.restaurants) => {
+	// if either newMap or L (leaflet) aren't defined exit early.
+	if (!newMap || !L) return;
 	restaurants.forEach(restaurant => {
 		// Add marker to the map
 		const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
