@@ -1,7 +1,7 @@
 // Register service worker only if supported
 if (navigator.serviceWorker) {
 	navigator.serviceWorker
-		.register("../sw.js")
+		.register("sw.js")
 		.then(function(reg) {
 			console.log("Service Worker has been registered successfully!");
 		})
