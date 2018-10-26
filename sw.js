@@ -42,8 +42,19 @@ self.addEventListener("activate", function(event) {
 	);
 });
 
-/* Intercept Event request and send them to the cache, if not in the cache, get them from the network */
+/* Intercept Fetch request and send them to the cache */
 self.addEventListener("fetch", function(event) {
+	/* Intercept request to our application(not leaflet or mapbox) */
+	const requestURL = new URL(event.request.url);
+
+	if (requestURL.origin === location.origin) {
+		if (requestURL.pathname.startsWith("/restaurant.html")) {
+			event.respondWith(caches.match("/restaurant.html"));
+			return;
+		}
+	}
+
+	/* If requested is not in the cache, get them from the network */
 	event.respondWith(
 		caches.match(event.request).then(function(response) {
 			return response || fetch(event.request);
