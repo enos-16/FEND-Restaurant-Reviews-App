@@ -48,8 +48,8 @@ self.addEventListener("fetch", function(event) {
 	const requestURL = new URL(event.request.url);
 
 	if (requestURL.origin === location.origin) {
-		if (requestURL.pathname.startsWith("/restaurant.html")) {
-			event.respondWith(caches.match("/restaurant.html"));
+		if (requestURL.pathname.startsWith("./restaurant.html")) {
+			event.respondWith(caches.match("./restaurant.html"));
 			return;
 		}
 	}
